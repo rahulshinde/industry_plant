@@ -11,180 +11,213 @@ html{
 }
 
 body{
-  margin: 1rem;
-  text-align: center;
-}
-
-header{
-  position: fixed;
-  top: 30vh;
-  height: 70vh;
-  left: 0;
-  width: 100%;
-  transform: translateY(calc(70vh - 8.75rem));
-  -webkit-transform: translateY(calc(70vh - 8.75rem));
-  transition: transform ease 0.5s;
-  -webkit-transition: transform ease 0.5s;
-  background-color: #fff;
-  padding-top: 1rem;
-  box-sizing: border-box;
-  z-index: 10;
-}
-
-#logo{
-  height: 2.5rem;
+  margin: 4rem 1rem 1rem 1rem;
 }
 
 h1,
 h2,
-h3{
-  font-size: 1rem;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-h1{
-  text-transform: uppercase;
-}
-
-h3{
-  font-size: 0.7rem;
-}
-
-.slide{
-  position: fixed;
-  top: 4rem;
-  left: 0;
-  bottom: 10rem;
-  width: 100%;
+h3,
+ul,
+li,
+p{
+  font-weight: 800;
+  line-height: 1.1em;
   margin: 0;
 }
 
-.image_container{
-  position: absolute;
-  top: 0;
-  bottom: 4rem;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
-
-}
-
-.image_container img{
-  max-height: 100%;
-  margin: 0 0.5rem;
-  backface-visibility: hidden;
-}
-
-.slide figcaption{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  left: 0;
-  opacity: 1;
-  transform: translateY(4rem);
-  -webkit-transform: translateY(4rem) ;
-  transition: transform ease 0.5s 0.5s;
-  -webkit-transition: transform ease 0.5s 0.5s;
-  background-color: #fff;
-}
-
-.slide{
-  transform: translateY(100vh);
-  -webkit-transform: translateY(100vh);
-  transition: transform ease 1s;
-  -webkit-transition: transform ease 1s;
-}
-
-.slide.out {
-  transform: translateY(-100vh);
-  -webkit-transform: translateY(-100vh);
-}
-
-.slide.out figcaption{
-  transform: translateY(-2rem);
-  -webkit-transform: translateY(-2rem);
-}
-
-.slide.current{
-  transform: translateY(0vh);
-  -webkit-transform: translateY(0vh);
-}
-
-.slide.current figcaption{
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-}
-
-#about_trigger:hover,
-#index_trigger:hover{
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.hidden_section{
-  margin-top: 2rem;
-  height: 0;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(2rem);
-  -webkit-transform: translateY(2rem);
-  transition: opacity ease 0.5s 0.25s, transform ease 0.5s 0.25s;
-  -webkit-transition: opacity ease 0.5s 0.25s, transform ease 0.5s 0.25s;
-}
-
-.about_text{
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.about_text a:link,
-.about_text a:visited{
+a:link,
+a:visited{
   color: #000;
   text-decoration: none;
 }
 
-.about_text a:hover{
-  cursor: pointer;
-  text-decoration: underline;
+.text_size{
+  font-size: 1rem;
 }
 
-.open_bottom header{
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
+.small_text_size{
+  font-size: 0.7rem;  
 }
 
-#about_page_logo{
-  height: calc(33vh - 1rem);
-  margin-bottom: 1rem;
+header{
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  /*background-color: #fff;*/
 }
 
-.show_about #about_trigger,
-.show_index #index_trigger{
-  text-decoration: underline;
+footer{
+  text-align: right;
 }
 
-.show_about #about_section,
-.show_index #project_index{
-  height: 0;
-  opacity: 1;
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  pointer-events: auto;
+#plant{
+  height: 1.1rem;
 }
 
-#project_index{
-  margin-top: 0rem;
+main{
 }
 
-#project_index table{
+#filters{
   display: inline-block;
+  margin-right: 1rem;
+  width: auto;
+  position: sticky;
+  -webkit-position: sticky;
+  top: 4rem;
 }
 
-#project_index td,
-#project_index th{
-  width: 12rem;
+.project{
+  display: inline;
+  margin-right: 1rem;
+}
+
+.project:hover .credits{
+  border: 1px solid #000;
+}
+
+.project:hover img{
+  border-radius: 2rem;
+}
+
+.credits{
+  display: inline-block;
+  vertical-align: bottom;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 0.35rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  transition: border ease 0.2s;
+}
+
+.project img{
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 16%;
+  max-height: 50vh;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  transition: border-radius ease 0.2s;
+}
+
+.slideshow_open #slideshow{
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+}
+
+#slideshow{
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transition: transform ease 0.4s;
+  -webkit-transition: transform ease 0.4s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+#slideshow img{
+  position: absolute;
+  top: calc(50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: calc(100% - 6rem);
+  max-width: 90%;
+}
+
+#slideshow img.arrow{
+  width: 3rem;
+  max-width: auto;
+  max-height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#slideshow img.arrow.close{
+  top: 1rem;
+  left: auto;
+  right: 1rem;
+  transform: translateY(0%);
+}
+
+#slideshow img.arrow.prev{
+  left: 1rem;
+}
+
+#slideshow img.arrow.next{
+  left: auto;
+  right: 1rem;
+}
+
+.slide{
+  opacity: 1;
+  transition: opacity ease 0.4s;
+  -webkit-transition: opacity ease 0.4s;
+}
+
+#slideshow p{
+  position: absolute;
+  width: 100%;
+  bottom: 1rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.zoom_image:hover{
+  cursor: zoom-in;
+}
+
+#slideshow_caption{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  opacity: 1;
+  transition: opacity ease 0.25s;
+  -webkit-transition: opacity ease 0.25s;
+}
+
+.fade_transition .slide{
+  opacity: 0;
+}
+
+.transitioning #slideshow_caption{
+  opacity: 0; 
+}
+
+.slide_transition.transitioning .slide{
+  transition: opacity ease 0.4s, transform ease 0.65s;
+  -webkit-transition: opacity ease 0.4s, transform ease 0.65s;
+}
+
+.slide_transition.next #slideshow img.next_slide{
+  transform: translate(-50%, 100%);
+}
+
+.slide_transition.next.transitioning #slideshow img.next_slide{
+  transform: translate(-50%, -50%);
+}
+.slide_transition.next.transitioning #slideshow img.current_slide{
+  transform: translate(-50%, -200%);
+}
+
+
+.slide_transition.prev #slideshow img.next_slide{
+  transform: translate(-50%, -200%);
+}
+
+.slide_transition.prev.transitioning #slideshow img.next_slide{
+  transform: translate(-50%, -50%);
+}
+.slide_transition.prev.transitioning #slideshow img.current_slide{
+  transform: translate(-50%, 100%);
 }
